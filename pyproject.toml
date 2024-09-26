@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "bsowell-test-deploy2"
+version = "0.0.1"
+description = "Repo for testing PyPi deployment."
+authors = ["Ben Sowell <ben@aryn.ai>"]
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent"
+]
+
+packages = [{include = "test_deploy"}]
+
+[tool.poetry.urls]
+"Repository" = "https://github.com/bsowell/test-pypi-deploy2"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+click = "^8.1.7"
+
+[tool.poetry.scripts]
+test = "test_deploy.test:cli"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+
+[tool.poetry.group.docs.dependencies]
+furo = "^2023.9.10"
+myst-parser = "2.0.0"
+sphinx = "^7.2.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
